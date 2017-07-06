@@ -32,6 +32,7 @@ const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
+const renderController = require('./controllers/render');
 
 /**
  * API keys and Passport configuration.
@@ -128,6 +129,13 @@ app.post('/account/profile', passportConfig.isAuthenticated, userController.post
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
+
+//A route to /sharedWithMe will show the user all credentials that have been shared with them
+//This route will need to...
+  //1. Confirm that a user is logged in
+  //2. Get all credentials that have been shared with the user
+  //3. Render a page with all of the user's shared credentials OR (if none exist), redirect the user to the home page
+app.use('/sharedWithMe', passportConfig.isAuthenticated, homeController.getSharedWithUser);
 
 /**
  * API examples routes.
