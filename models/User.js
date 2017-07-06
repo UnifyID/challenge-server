@@ -22,7 +22,35 @@ const userSchema = new mongoose.Schema({
     gender: { type: String, default: '' },
     location: { type: String, default: '' },
     website: { type: String, default: '' },
-    picture: { type: String, default: '' }
+    picture: { type: String, default: '' },
+    shared_with_me: [
+      {
+      website: "youtube.com",
+      username: "macklemore299",
+      password: "(*#$2k$SSD",
+      lender_user_id: "macklemore"
+      },
+      {
+      website: "hulu.com",
+      username: "lorenzo789",
+      password: "23789$$SSD",
+      lender_user_id: "lorenzochello"
+      }
+    ],
+    shared_with_others: [
+      {
+      website: "netflix.com",
+      username: "johndoeandchill",
+      password: "(*#$2k$SSD",
+      borrower_user_id: "thefriendofjohndoe"
+      },
+      {
+      website: "play.hbogo.com",
+      username: "johndoewatchesgameofthrones",
+      password: "23789$$SSD",
+      borrower_user_id: "gotfan"
+      }
+    ]
   }
 }, { timestamps: true });
 

@@ -47,4 +47,13 @@ describe('GET /random-url', () => {
       .get('/reset')
       .expect(404, done);
   });
+
+  describe('GET /sharedWithMe', () => {
+    it('should return 200 ok', (done) => {
+      request(app)
+        .get('/sharedWithMe')
+        .expect(200, done);
+    });
+  });
+  
 });
