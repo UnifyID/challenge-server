@@ -3,25 +3,24 @@ extends layout
 block content
   h1 Example Server
   p.lead A boilerplate for Node.js web applications.
+  div
+  ul#credentials_ul
+  div
   hr
   .row
     .col-sm-6
       h2 Credentials Shared with you
-      p See all the credentials other users have shared with you
+      p View all the credentials other users have shared with you
       p
         a.btn.btn-default(href='/sharedWithMe', role='button' id="sharedWithMe") View details »
     .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      h2 Credentials you have Shared
+      p Manage and View all the credentials you have shared with others
       p
-        a.btn.btn-default(href='#', role='button') View details »
+        a.btn.btn-default(href='/whatIShared', role='button' id="whatIShared") View details »
     .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      h2 All of your Credentials
+      p Manage and View all of your credentials
       p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
+        a.btn.btn-default(href='/myCredentials', role='button' id="myCredentials") View details »
+    hr
