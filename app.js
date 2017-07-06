@@ -135,7 +135,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
   //1. Confirm that a user is logged in
   //2. Get all credentials that have been shared with the user
   //3. Render a page with all of the user's shared credentials OR (if none exist), redirect the user to the home page
-app.use('/sharedWithMe', passportConfig.isAuthenticated, homeController.getSharedWithUser, renderController.renderSharedWithMe);
+app.use('/sharedWithMe', passportConfig.isAuthenticated, homeController.getSharedWithUser);
 
 /**
  * API examples routes.
